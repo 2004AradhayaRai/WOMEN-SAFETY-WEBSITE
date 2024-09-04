@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Self Defense - YAMA</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        header {
+            background-color: #6f2c91;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        header img.logo {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            height: 50px; /* Adjust the height as needed */
+            width: auto;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .intro {
+            padding: 40px;
+            text-align: center;
+            background-color: #f8f9fa;
+            animation: slideIn 1.5s ease-in-out;
+        }
+
+        @keyframes slideIn {
+            from { transform: translateX(-100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+
+        .intro h2 {
+            font-size: 2em;
+            color: #6f2c91;
+            animation: bounceIn 1.5s ease-in-out;
+        }
+
+        @keyframes bounceIn {
+            0% { transform: scale(0.5); opacity: 0; }
+            50% { transform: scale(1.1); opacity: 1; }
+            100% { transform: scale(1); }
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .button {
+            background-color: #d9534f;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            transition: color 0.4s;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            animation: buttonFadeIn 2s forwards;
+        }
+
+        .intro p {
+            font-size: 1.2em;
+            margin-top: 20px;
+        }
+
+        .techniques {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 20px 0;
+        }
+
+        .technique {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin: 20px;
+            padding: 20px;
+            width: 250px;
+            text-align: center;
+            animation: zoomIn 1s ease-in-out;
+            position: relative;
+            cursor: pointer;
+        }
+
+        @keyframes zoomIn {
+            from { transform: scale(0); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+
+        .technique img {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+
+        .technique h3 {
+            margin-top: 10px;
+            color: #6f2c91;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1001;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.5);
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        .modal-content {
+            background-color: white;
+            margin: 15% auto;
+            padding: 20px;
+            border-radius: 10px;
+            width: 80%;
+            max-width: 600px;
+            text-align: center;
+            animation: slideInFromBottom 0.5s ease-in-out;
+        }
+
+        @keyframes slideInFromBottom {
+            from { transform: translateY(100%); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .call-to-action {
+            background-color: #6f2c91;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        .call-to-action h2 {
+            margin: 0;
+            font-size: 2.2em;
+        }
+
+        .call-to-action p {
+            font-size: 1.2em;
+            margin: 10px 0;
+        }
+
+        .call-to-action button {
+            background-color: white;
+            color: #6f2c91;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1em;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .call-to-action button:hover {
+            background-color: #6f2c91;
+            color: white;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <img src="logo.jpg" alt="YAMA logo" class="logo">
+        <h1>Self Defense Techniques</h1>
+    </header>
+
+    <div class="intro">
+        <div class="button-container">
+            <button class="button" onclick="window.location.href='Home.html'">Home</button>
+            <button class="button" onclick="window.location.href='SDTricks.html'">Self Defense</button>
+            <button class="button" onclick="window.location.href='Features.html'">Features</button>
+            <button class="button" onclick="window.location.href='About.html'">About Us</button>
+            <button class="button" onclick="window.location.href='login.html'">Login/Sign Up</button>
+        </div>
+        <h2>Empower Yourself</h2>
+        <p>Learning self-defense techniques is an essential part of ensuring your safety. Click on the techniques below to learn more.</p>
+    </div>
+
+    <div class="techniques">
+        <div class="technique" onclick="openModal('modal1')">
+            <img src="Palm_Strike.jpg" alt="Technique 1">
+            <h3>Palm Strike</h3>
+        </div>
+        <div class="technique" onclick="openModal('modal2')">
+            <img src="Knee_Strike.jpg" alt="Technique 2">
+            <h3>Knee Strike</h3>
+        </div>
+        <div class="technique" onclick="openModal('modal3')">
+            <img src="Elbow_Strike.jpg" alt="Technique 3">
+            <h3>Elbow Strike</h3>
+        </div>
+        <div class="technique" onclick="openModal('modal4')">
+            <img src="HammerFist_Strike.jpg" alt="Technique 4">
+            <h3>HammerFist Strike</h3>
+        </div>
+    </div>
+
+    <div id="modal1" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal1')">&times;</span>
+            <h2>Palm Strike</h2>
+            <p>Target the attacker's nose with an upward strike using the heel of your palm. This can disorient the attacker and give you time to escape.</p>
+        </div>
+    </div>
+
+    <div id="modal2" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal2')">&times;</span>
+            <h2>Knee Strike</h2>
+            <p>Aim your knee at the attacker's groin with force. This is a vulnerable area and can incapacitate the attacker quickly.</p>
+        </div>
+    </div>
+
+    <div id="modal3" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal3')">&<times>/<span>
+        </div>
+</body>
+</html>

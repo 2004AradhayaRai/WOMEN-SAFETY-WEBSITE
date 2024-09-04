@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YAMA Features</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #e6d1f7; /* Light purple background */
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: flex-start; /* Align items to the start */
+            padding: 20px;
+            min-height: 100vh; /* Ensure the body takes at least the full height of the viewport */
+            overflow-y: auto; /* Allow vertical scrolling */
+            border: 10px solid #6f2c91; /* Border around the content */
+            border-radius: 20px; /* Rounded corners for the border */
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* Shadow for depth */
+            position: relative; /* Position relative to place logo */
+        }
+
+        .logo {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            width: 100px; /* Adjust the width as needed */
+        }
+
+        .block {
+            background-color: #ffffff; /* White background for blocks */
+            border: 2px solid #6f2c91; /* Dark purple border */
+            border-radius: 15px; /* Rounded corners */
+            padding: 20px;
+            margin: 20px;
+            width: 300px; /* Fixed width for blocks */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Shadow effect */
+            position: relative; /* Position relative for absolute positioning of buttons */
+            opacity: 0; /* Start as invisible for fade-in effect */
+            transform: translateY(20px); /* Start lower for effect */
+            animation: fadeInUp 0.5s forwards; /* Animation for pop-up effect */
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0); /* Move up to original position */
+            }
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            color: #6f2c91; /* Dark purple for headings */
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        p {
+            font-size: 1rem;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .button {
+            background-color: #d9534f;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            padding: 10px 20px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .button:hover {
+            background-color: #ffffff;
+            color: #d9534f; /* Change text color on hover */
+        }
+
+        /* Animation delay for each block */
+        .block:nth-child(1) {
+            animation-delay: 0.1s;
+        }
+
+        .block:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .block:nth-child(3) {
+            animation-delay: 0.3s;
+        }
+
+        .block:nth-child(4) {
+            animation-delay: 0.4s;
+        }
+
+        .block:nth-child(5) {
+            animation-delay: 0.5s;
+        }
+
+        .block:nth-child(6) {
+            animation-delay: 0.6s;
+        }
+
+        .block:nth-child(7) {
+            animation-delay: 0.7s;
+        }
+    </style>
+</head>
+
+<body>
+
+    <img src="logo.jpg" alt="Logo" class="logo">
+
+    <div class="block">
+        <h2>Emergency Contact</h2>
+        <p>Quickly reach out to your trusted contacts in case of an emergency. Just one tap can save your life!</p>
+        <div class="button-container">
+            <button class="button">Add Contact</button>
+            <button class="button">Call Now</button>
+        </div>
+    </div>
+
+    <div class="block">
+        <h2>Voice Recognition</h2>
+        <p>Use your voice to send alerts and commands. Stay hands-free and focused on what's important.</p>
+        <div class="button-container">
+            <button class="button">Enable</button>
+            <button class="button">Settings</button>
+        </div>
+    </div>
+
+    <div class="block">
+        <h2>Video Recording</h2>
+        <p>Record videos in real-time to document any situation. Capture what matters most at the moment.</p>
+        <div class="button-container">
+            <button class="button">Start Recording</button>
+            <button class="button">View Recordings</button>
+        </div>
+    </div>
+
+    <div class="block">
+        <h2>GPS Tracker</h2>
+        <p>Keep track of your location and share it with your loved ones. Safety at your fingertips!</p>
+        <div class="button-container">
+            <button class="button">Start Tracking</button>
+            <button class="button">Stop Tracking</button>
+        </div>
+    </div>
+
+    <div class="block">
+        <h2>Safest Route Tracker</h2>
+        <p>Find and navigate the safest route to your destination. Avoid dangerous areas and stay safe!</p>
+        <div class="button-container">
+            <button class="button">Find Route</button>
+            <button class="button">Settings</button>
+        </div>
+    </div>
+
+    <div class="block">
+        <h2>Detect Tracker</h2>
+        <p>Monitor and alert you to any unusual activity in your vicinity. Stay aware of your surroundings!</p>
+        <div class="button-container">
+            <button class="button">Start Detection</button>
+            <button class="button">View Alerts</button>
+        </div>
+    </div>
+
+    <!-- New feature block added -->
+    <div class="block">
+        <h2>Voice Recognition Enhanced</h2>
+        <p>Advanced voice recognition for more accurate and contextual commands. Enhance your hands-free experience.</p>
+        <div class="button-container">
+            <button class="button">Activate</button>
+            <button class="button">Training</button>
+        </div>
+    </div>
+
+</body>
+
+</html>

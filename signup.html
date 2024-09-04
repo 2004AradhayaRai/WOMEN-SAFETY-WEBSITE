@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - YAMA</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #e6e6fa; /* Light purple background */
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .form-container {
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            width: 350px;
+            text-align: center;
+            animation: slideIn 0.5s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideIn {
+            from { transform: translateY(-30px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        h1 {
+            color: #6a5acd; /* Darker purple for headings */
+            margin-bottom: 10px;
+        }
+
+        p {
+            color: #555;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        input[type="date"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 2px solid #d8bfda; /* Light purple border */
+            border-radius: 5px;
+            transition: border-color 0.3s;
+        }
+
+        input:focus {
+            border-color: #9370db; /* Medium purple on focus */
+            outline: none;
+        }
+
+        button {
+            background-color: #9370db; /* Medium purple */
+            color: white;
+            border: none;
+            padding: 10px;
+            width: 100%;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        button:hover {
+            background-color: #6a5acd; /* Darker purple on hover */
+            transform: scale(1.05); /* Slightly enlarge button */
+        }
+
+        .footer {
+            margin-top: 15px;
+            font-size: 0.9em;
+        }
+
+        .footer a {
+            color: #9370db;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer a:hover {
+            color: #6a5acd; /* Darker purple on hover */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="form-container">
+            <h1>Create Your Account</h1>
+            <p>Join YAMA and Ensure Your Safety.</p>
+            <form id="signUpForm">
+                <input type="email" placeholder="Email Address" required>
+                <input type="text" placeholder="Username" required>
+                <input type="date" placeholder="Date of Birth" required>
+                <input type="password" placeholder="Password" required>
+                <input type="password" placeholder="Confirm Password" required>
+                <button type="submit">Sign Up</button>
+            </form>
+            <div class="footer">
+                <p>Already have an account? <a href="#"><button class="button" onclick="window.location.href='login.html'">Login in</button></a></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('signUpForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            alert('Sign Up functionality not implemented yet.');
+        });
+    </script>
+
+</body>
+</html>

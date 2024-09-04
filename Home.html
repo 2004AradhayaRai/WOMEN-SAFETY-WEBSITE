@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YAMA - Home</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #e6d1f7; /* Light purple background */
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start; /* Align items to the left */
+            height: 100vh;
+            text-align: left; /* Align text to the left */
+            position: relative; /* Position relative for absolute positioning of quotes */
+            overflow: hidden;
+            padding-left: 50px; /* Add padding to the left */
+            border: 10px solid #6f2c91; /* Border around the content */
+            border-radius: 20px; /* Rounded corners for the border */
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* Shadow for depth */
+        }
+
+        h1 {
+            font-size: 4rem;
+            color: #6f2c91; /* Dark purple for contrast */
+            margin-bottom: 20px;
+            animation: typing 4s steps(4) forwards; /* Draw animation */
+            white-space: nowrap;
+            overflow: hidden;
+            border-right: 5px solid #d9534f; /* Cursor effect */
+            width: 0; /* Width set to 0 for typing animation */
+        }
+
+        @keyframes typing {
+            from {
+                width: 0;
+            }
+            to {
+                width: 50%;
+            }
+        }
+
+        @keyframes blink-caret {
+            from,
+            to {
+                border-color: dark purple;
+            }
+            50% {
+                border-color: #d9534f;
+            }
+        }
+
+        .quote {
+            font-size: 1.5rem;
+            color: #5e5e5e;
+            animation: fadeIn 2s forwards;
+            margin-top: 10px; /* Spacing between quotes */
+        }
+
+        .quote1 {
+            animation: typing 4s steps(8) forwards; /* Self-drawing effect for the first quote */
+            white-space: nowrap;
+            overflow: hidden;
+            border-right: 5px solid #d9534f; /* Cursor effect */
+            width: 0; /* Width set to 0 for typing animation */
+        }
+
+        .quote2 {
+            animation: typing 4s steps(10) forwards; /* Self-drawing effect for the second quote */
+            white-space: nowrap;
+            overflow: hidden;
+            border-right: 5px solid #d9534f; /* Cursor effect */
+            width: 0; /* Width set to 0 for typing animation */
+            margin-top: 20px; /* Additional spacing */
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: flex-start; /* Align buttons to the left */
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .button {
+            background-color: #d9534f;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            transition: color 0.4s;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            animation: buttonFadeIn 2s forwards; /* Button animation */
+        }
+
+        @keyframes buttonFadeIn {
+            from {
+                transform: translateY(20px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .button:hover {
+            color: #d9534f; /* Change text color on hover */
+            background-color: white;
+        }
+
+        footer {
+            position: absolute;
+            bottom: 20px;
+            width: 100%;
+            text-align: center;
+            color: #777;
+            font-size: 0.9rem;
+        }
+
+        /* New code for positioning the image */
+        .big-image {
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            max-width: 450px;
+            height: auto;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>YAMA</h1> <!-- Animated website name -->
+
+    <div class="quote quote1">"Empower a woman, and you empower a community."</div> <!-- Motivational quote 1 -->
+    <div class="quote quote2">"YAMA: a mission for safety, a friend in need."</div> <!-- Motivational quote 2 -->
+
+    <div class="button-container">
+        <button class="button" onclick="window.location.href='Home.html'">Home</button>
+        <button class="button" onclick="window.location.href='SDTricks.html'">Self Defense</button>
+        <button class="button" onclick="window.location.href='Features.html'">Features</button>
+        <button class="button" onclick="window.location.href='About.html'">About Us</button>
+        <button class="button" onclick="window.location.href='login.html'">Login/Sign Up</button>
+
+    </div>
+
+
+    <footer>
+        <p>&copy; 2024 YAMA. All Rights Reserved.</p>
+    </footer>
+
+    <!-- JavaScript to add image after animations -->
+    <script>
+        window.onload = function() {
+            // Delay for the duration of the longest animation (typing animation is 4 seconds)
+            setTimeout(function() {
+                // Create an image element
+                var img = document.createElement('img');
+                img.src = 'logo.jpg'; // Replace with your image URL
+                img.alt = 'YAMA Logo'; // Optional alt text
+                img.className = 'big-image';
+
+                // Append the image to the body
+                document.body.appendChild(img);
+
+                // Make the image visible
+                setTimeout(function() {
+                    img.style.opacity = 1;
+                }, 100);
+            }, 4500); // Add a delay to match the end of your animations
+        }
+    </script>
+
+</body>
+
+</html>
